@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build && npm install netlify-cli -g && netlify functions:deploy"  # Replace with your build command
+  publish = "To do planner"  # Replace with your build output directory
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+
